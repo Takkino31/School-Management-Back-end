@@ -1,6 +1,6 @@
 const express = require('express')
 require('dotenv').config()
-const Student = require('./student/student')
+const Student = require('./api/modules/student/student')
 
 const {DB_USERNAME,DB_PASS,MODE_ENV,PORT} = process.env
 
