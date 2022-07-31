@@ -1,39 +1,18 @@
 const express = require('express')
 require('dotenv').config()
-const Student = require('./api/modules/student/student')
+const Files = require('./api/utils/files')
 
 const {DB_USERNAME,DB_PASS,MODE_ENV,PORT} = process.env
 
 const app = express()
 app.use(express.json())
+ 
+var routes = Files.walk(__dirname + '/api/modules');
+for (var i = 0; i < routes.length; i++)
+  if (routes[i].indexOf('routes') !== -1)
 
-app.get('/students' , (req , res)=>{
-    const students = Student.findAllStudents()
-    res.send(students)
-})
-
-app.get('/student/:id' , (req , res)=>{
-    const student = Student.findOneStudent(req.params.id)
-    res.send(req.body)
-})
-
-app.post('/student',(req,res) =>{
-    console.log(req.body)
-    Student.addStudent(req.body)
-    res.send(req.body)
-})
-
-app.put('/student/:id',(req,res) =>{
-    console.log(req.body)
-    Student.updateStudent(req.params.id,req.body)
-    res.send(req.body)
-})
-
-console.log(PORT);
+    require(routes[i])(app);
 
 app.listen(PORT , ()=> {
     console.log('> Server is up and running on port : ' + PORT)
 })
-
-
-console.log(DB_USERNAME);

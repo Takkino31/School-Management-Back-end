@@ -43,22 +43,28 @@ const students = [
     },
 ]
 
-module.exports.findAllStudents = () =>{
-    return students;
+module.exports.findAllStudents = (req,res) =>{
+
+    res.json(students)
 }
 
-module.exports.findOneStudent = (id) => {
-    return students.find((student) => {
-        student.id = id
-    })
+module.exports.findOneStudent = (req,res) => {
+    const id = req.params.id
+    const student = students.find((s)=>s.id==id)
+    res.json(student)
 }
 
-module.exports.addStudent = (student) => {
-    return students.push(student)
+module.exports.addStudent = (req, res) => {
+    students.push(req.body)
+    res.json(req.body)
 }
 
-module.exports.updateStudent = (id,student) =>{
-    const index = students.findIndex((element) => { element.id == id})
-    students.splice(index,1,student)
-    return students[index]
+module.exports.updateStudent = (req,res) =>{
+    const id = req.params.id
+    const student = students.find((s)=>s.id ==id)
+    res.json(student)
+}
+
+module.exports.deleteStudent = (req,res) => {
+    res.json({status: true})
 }
