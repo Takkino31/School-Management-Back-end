@@ -66,5 +66,7 @@ module.exports.updateStudent = (req,res) =>{
 }
 
 module.exports.deleteStudent = (req,res) => {
+    const index = students.findIndex((student)=>student.id == req.params.id)
+    students.splice(index,1)
     res.json({status: true})
 }

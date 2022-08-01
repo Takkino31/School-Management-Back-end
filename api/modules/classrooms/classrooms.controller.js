@@ -33,5 +33,7 @@ module.exports.updateClassroom = (req,res) =>{
 }
 
 module.exports.deleteClassroom = (req,res) => {
+    const index = classrooms.findIndex((classroom)=>classroom.id == req.params.id)
+    classrooms.splice(index,1)
     res.json({status: true})
 }
