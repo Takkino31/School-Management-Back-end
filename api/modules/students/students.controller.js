@@ -1,3 +1,6 @@
+
+const { classrooms } = require('../classrooms/classrooms.controller');
+const StudentRepository = require('./students.repository');
 const students = [
     {
         id: 1,
@@ -43,9 +46,9 @@ const students = [
     },
 ]
 
-module.exports.findAllStudents = (req,res) =>{
-
+module.exports.findAllStudents = (req,res)=>{
     res.json(students)
+
 }
 
 module.exports.findOneStudent = (req,res) => {

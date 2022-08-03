@@ -9,6 +9,7 @@ const classrooms = [
     {id: 8, className: 'Tle S2A8', desc: 'lorem ipsum8'},
     {id: 9, className: 'Tle S2A9', desc: 'lorem ipsum9'}
   ]
+module.exports.classrooms = this.classrooms
 
 module.exports.findAllClassrooms = (req,res) =>{
     console.log("test");
