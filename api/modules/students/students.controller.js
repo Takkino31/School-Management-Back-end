@@ -1,5 +1,4 @@
 
-const { classrooms } = require('../classrooms/classrooms.controller');
 const StudentRepository = require('./students.repository');
 const students = [
     {
@@ -46,20 +45,29 @@ const students = [
     },
 ]
 
-module.exports.findAllStudents = (req,res)=>{
-    res.json(students)
+module.exports.students = students
 
+// module.exports.findAllStudents = (req,res)=>{
+//     res.json(students)
+// }
+
+module.exports.findAllStudents = function findAll(req,res) {
+    const results = students.map((student)=>{ new StudentRepository(student)})
+    console.log({results});
+    res.send(results)
 }
+
 
 module.exports.findOneStudent = (req,res) => {
     const id = req.params.id
     const student = students.find((s)=>s.id==id)
-    res.json(student)
+    res.send(new StudentRepository(student)) 
 }
 
 module.exports.addStudent = (req, res) => {
-    students.push(req.body)
-    res.json(req.body)
+    const student = req.body
+    students.push(student)
+    res.json(student)
 }
 
 module.exports.updateStudent = (req,res) =>{
@@ -69,7 +77,8 @@ module.exports.updateStudent = (req,res) =>{
 }
 
 module.exports.deleteStudent = (req,res) => {
-    const index = students.findIndex((student)=>student.id == req.params.id)
+    const id = req.params.id
+    const index = students.findIndex((student)=>student.id == id)
     students.splice(index,1)
-    res.json({status: true})
+    res.send(true)
 }

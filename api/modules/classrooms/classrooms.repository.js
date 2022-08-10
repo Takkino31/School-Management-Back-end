@@ -1,15 +1,13 @@
-const classrooms = require('./classrooms.controller').classrooms
-module.exports = class lassroomRepository{
+const students = require('../students/students.controller').students
+module.exports = class ClassroomRepository{
     id;
-    idClass;
-    nom;
-    niveau;
-    misser;
-    classroom;
+    className;
+    desc;
+    students;
     constructor(data){
         Object.assign(this,data)
-        this.classroom = classrooms.find((classroom) => {
-            classroom.id == this.idClass
+        this.students = students.find((student) => {
+            student.className == this.idClass
         })
     }
 }
