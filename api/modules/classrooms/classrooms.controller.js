@@ -1,5 +1,4 @@
 const ClassroomRepository = require('./classrooms.repository')
-const StudentRepository = require('../students/students.repository')
 const classrooms = [
     {id: 1, className: 'Tle S2A1', desc: 'lorem ipsum1'},
     {id: 2, className: 'Tle S2A2', desc: 'lorem ipsum2'},
@@ -14,8 +13,8 @@ const classrooms = [
 module.exports.classrooms = classrooms
 
 module.exports.findAllClassrooms = (req,res) =>{
-    const results = classrooms.map((classroom)=>{ new ClassroomRepository(classroom)})
-    console.log({results});
+    const results = classrooms.map((classroom)=> new ClassroomRepository(classroom))
+    // res.json(results)
     res.send(results)
 }
 

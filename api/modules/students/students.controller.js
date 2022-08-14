@@ -52,7 +52,7 @@ module.exports.students = students
 // }
 
 module.exports.findAllStudents = function findAll(req,res) {
-    const results = students.map((student)=>{ new StudentRepository(student)})
+    const results = students.map((student)=> new StudentRepository(student))
     console.log({results});
     res.send(results)
 }

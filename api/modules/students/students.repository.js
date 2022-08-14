@@ -1,4 +1,4 @@
-classrooms = require('../classrooms/classrooms.controller').classrooms
+const ctrl = require('../classrooms/classrooms.controller')
 module.exports = class StudentRepository{
     id;
     idClass;
@@ -8,8 +8,6 @@ module.exports = class StudentRepository{
     classroom;
     constructor(data){
         Object.assign(this,data)
-        this.classroom = classrooms.find((classroom) => {
-            classroom.id == this.idClass
-        })
+        this.classroom = ctrl.classrooms.find( (c) => c.id == this.idClass) 
     }
 }
