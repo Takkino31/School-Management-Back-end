@@ -11,7 +11,6 @@ module.exports.login = ({username,password}) =>{
         return null
     } else {
         user = {...user}
-        console.log(user);
         delete user.password
         const token = jwt.sign(user,'myAppKey',{expiresIn: 60*60})
         return {user, token}
