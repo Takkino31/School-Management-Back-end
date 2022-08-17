@@ -17,6 +17,18 @@ module.exports.login = ({username,password}) =>{
     }
 }
 
+module.exports.checkToken = (token)=>{
+    return new Promise ((resolve, reject) => {
+        jwt.verify(token,'myAppKey',null,(error,decoded)=>{
+            if (error) {
+                reject(error)
+            }else{
+                resolve(decoded)
+            }
+        }) 
+    })
+}
+
 module.exports.listUsers = ()=>{
     return UserService.list()
 }
