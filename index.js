@@ -8,16 +8,23 @@ const app = express()
 // app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-require('./api/modules/auth/auth.guard')(app)
- 
+ //AUTOLOAD ROUTES
 var routes = Files.walk(__dirname + '/api/modules');
-  for (var i = 0; i < routes.length; i++){
-    if (routes[i].indexOf('routes') !== -1){
 
-        require(routes[i])(app);
-        console.log(routes[i]);
-    }
-  }
+
+//IMPORT PUBLIC ROUTEs
+for (var i = 0; i < routes.length; i++)
+  if (routes[i].indexOf('.public.routes') !== -1)
+      require(routes[i])(app);
+      console.log(routes[i])
+
+//USE GUARD FOR PRIVATES ROUTES
+require('./api/modules/auth/auth.guard')(app)
+
+for (var i = 0; i < routes.length; i++)
+  if (routes[i].indexOf('routes') !== -1)
+    require(routes[i])(app);
+      console.log(routes[i]);
 
 
 
