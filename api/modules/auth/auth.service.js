@@ -2,11 +2,12 @@ const UserService = require('../users/users.service')
 const jwt = require('jsonwebtoken')
 
 module.exports.register = ({username,password}) =>{
-    UserService.insertOne({username,password})
+   return UserService.insertOne({username,password})
 }
 
 module.exports.login = ({username,password}) =>{
     let user = UserService.findOneBysername(username)
+
     if (!user || user.password !== password) {
         return null
     } else {

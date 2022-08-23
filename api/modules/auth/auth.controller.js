@@ -1,8 +1,9 @@
 const AuthService = require ('./auth.service')
 
-module.exports.register  = (req, res) => {
+module.exports.register = async  (req, res) => {
     const data = req.body
-    const user = AuthService.register(data)
+    const user = await AuthService.register(data)
+    console.log('come on '+ user);
     res.send(user)
 }
 

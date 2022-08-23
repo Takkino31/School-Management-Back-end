@@ -5,11 +5,13 @@ const users = [
     {id: 4, username: 'leo', password: 1234, role :  'USER'},
 ]
 
-module.exports.insertOne = (userInput) => {
-    console.log(userInput);
-    const user = {...userInput,role : 'USER', id: users.length +1}
-    users.push(user)
-    return user
+const User = require('./users.schema')
+
+module.exports.insertOne = async (userInput) => {
+    const user = {...userInput,role : 'USER'}
+    const result = await User.create(user)
+    console.log({result});
+    return result
 }
 
 module.exports.findOneBysername = (username) =>{
