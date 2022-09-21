@@ -11,7 +11,7 @@ app.use(express.json())
 
 console.log('Connecting to db...')
 mongoose.connect(process.env.DB_URL)
-.then((resule)=>{
+.then((result)=>{
   console.log('App is connected to School Management DB')
   initApp()
 })

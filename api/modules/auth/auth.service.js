@@ -5,13 +5,12 @@ module.exports.register = ({username,password}) =>{
    return UserService.insertOne({username,password})
 }
 
-module.exports.login = ({username,password}) =>{
-    let user = UserService.findOneBysername(username)
-
-    if (!user || user.password !== password) {
+module.exports.login = async ({username,password}) =>{
+    let user = await UserService.findOneBysername(username)
+    if (!user || user.password != password) {
         return null
     } else {
-        user = {...user}
+        user = {...user.toObject()}
         delete user.password
         const token = jwt.sign(user,'myAppKey',{expiresIn: 60*60})
         return {user, token}
@@ -24,7 +23,7 @@ module.exports.checkToken = (token)=>{
             if (error) {
                 reject(error)
             }else{
-                resolve(decoded)
+                resolve(decoded)  
             }
         }) 
     })
