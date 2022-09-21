@@ -17,39 +17,28 @@ const Classroom = require('./classrooms.schema')
 
 module.exports.findAllClassrooms = async (req,res) =>{
     const results = await Classroom.find()
-    // res.json(results)
-    // classrooms.map((classroom)=> new ClassroomRepository(classroom))
-    console.log({results});
     res.send(results)
 }
 
 module.exports.findOneClassroom = async (req,res) => {
     const id = req.params.id
-    // const classroom = classrooms.find((c)=>c.id==id)
-    // res.json(new ClassroomRepository(classroom))
-
     const classroom = await Classroom.findById(id)
     res.send(classroom)
 }
 
 module.exports.deleteClassroom = async (req,res) => {
     const id = req.params.id
-    // const index = classrooms.findIndex((classroom)=>classroom.id == id)
-    // classrooms.splice(index,1)
     await Classroom.findByIdAndDelete({_id : id})
     res.send({status: true})
 }
 
 module.exports.addClassroom = async(req, res) => {
-    // const classroom = req.body
-    // classrooms.push(classroom)
     const classroom = await Classroom.create(req.body)
     res.send(classroom)
 }
 
 module.exports.updateClassroom = async(req,res) =>{
     const id = req.params.id
-    // const classroom = classromms.find((s)=>s.id ==id)
     const classroom = await Classroom.findByIdAndUpdate({_id: id},req.body)
     res.send(classroom)
 }

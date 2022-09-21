@@ -47,38 +47,37 @@ const students = [
 
 module.exports.students = students
 
-// module.exports.findAllStudents = (req,res)=>{
-//     res.json(students)
-// }
+const Student = require('./students.schema')
 
-module.exports.findAllStudents = function findAll(req,res) {
-    const results = students.map((student)=> new StudentRepository(student))
-    console.log({results});
+module.exports.findAllStudents = async (req,res)=> {
+    // const results = students.map((student)=> new StudentRepository(student))
+    // console.log({results});
+    // res.send(results)
+    const results = await Student.find()
     res.send(results)
 }
 
 
-module.exports.findOneStudent = (req,res) => {
+module.exports.findOneStudent = async(req,res) => {
     const id = req.params.id
-    const student = students.find((s)=>s.id==id)
-    res.send(new StudentRepository(student)) 
+    const student = await Student.findById({_id: id})
+    // res.send(new StudentRepository(student)) 
+    res.send(student) 
 }
 
-module.exports.addStudent = (req, res) => {
-    const student = req.body
-    students.push(student)
-    res.json(student)
+module.exports.addStudent = async (req, res) => {
+    const student = await Student.create(req.body)
+    res.send(student)
 }
 
-module.exports.updateStudent = (req,res) =>{
+module.exports.updateStudent = async (req,res) =>{
     const id = req.params.id
-    const student = students.find((s)=>s.id ==id)
-    res.json(student)
+    const student = await Student.findByIdAndUpdate({_id: id},req.body)
+    res.send(student)
 }
 
-module.exports.deleteStudent = (req,res) => {
+module.exports.deleteStudent = async(req,res) => {
     const id = req.params.id
-    const index = students.findIndex((student)=>student.id == id)
-    students.splice(index,1)
-    res.send(true)
+    await Student.findByIdAndDelete({_id : id})
+    res.send({status: true})
 }
