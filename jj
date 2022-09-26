@@ -1,0 +1,119 @@
+[33mcommit aac3382a856385ee338e52ed62c898f4b1bcc418[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Wed Sep 21 13:19:44 2022 +0000
+
+    Students Routes (ADD EDIT DELETE LISTING) Done
+
+[33mcommit f52008187b020775e1f59dde8ad4d997259af0fe[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Wed Sep 21 12:37:59 2022 +0000
+
+    Routes Classrooms (ADD EDIT DELETE LISTING) Done
+
+[33mcommit 7ad6610d676d836260a6aca7cff1304d2c91ac93[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Wed Sep 21 10:08:44 2022 +0000
+
+    Login User Done
+
+[33mcommit a8904487906c44b633d88584c39336b0692f3756[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Tue Aug 23 13:39:32 2022 +0000
+
+    Register done with mongoose
+
+[33mcommit ea66c6e5b09c7cddd84ef2376236a01ebfa47e5b[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Tue Aug 23 12:02:41 2022 +0000
+
+    connect to mongodb safely
+
+[33mcommit 712b48392d62bb07a709c22f8237718b248f932b[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Wed Aug 17 12:27:08 2022 +0000
+
+    Private & Public routes done
+
+[33mcommit 9a3ed105c34a7078f3462fbc60cf22d60a9ae089[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Wed Aug 17 11:54:11 2022 +0000
+
+    Guard Done After Token
+
+[33mcommit b64df90f9be238b1a221a6324aeae41479150c4c[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Mon Aug 15 22:59:00 2022 +0000
+
+    Token done
+
+[33mcommit ee939ef2aa0d74b89d7e9448fd4ada98c47ad8e6[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Mon Aug 15 22:50:30 2022 +0000
+
+    token done
+
+[33mcommit 6d7802e9634033663587cfa4d03f6511f4bab892[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Mon Aug 15 22:22:10 2022 +0000
+
+    Login & Register Done Without JWT
+
+[33mcommit ffdeee715643030dc240dfb8a830a0a9d4366c16[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Sun Aug 14 09:48:04 2022 +0000
+
+    Nested entity done after souhaibou's help
+
+[33mcommit 9fd7a2075e0f48df12970ebe218af0f8fbec9b14[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Wed Aug 10 08:33:05 2022 +0000
+
+    undefined nested object classroom andclassroom  on find
+
+[33mcommit 8e7e3e413e519d625e472d0ff5b181a21db17d4b[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Wed Aug 3 15:01:16 2022 +0000
+
+    routes done without repository of each entity
+
+[33mcommit cdc02345e92f7a3e47c316c0b69c9980f4171774[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Mon Aug 1 22:53:06 2022 +0000
+
+    Delete routes done for classroom and student
+
+[33mcommit 7c4fb6d09535babc366c925ea4edba75c84db638[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Sun Jul 31 14:59:58 2022 +0000
+
+    CRUD classroom done
+
+[33mcommit 748379084599d9b8d4e317029e956e9def4e1ce8[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Sun Jul 31 10:01:37 2022 +0000
+
+    Autoload files done
+
+[33mcommit 50f068fce2bc4639ad94d85bf3dec064c5deab6c[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Sun Jul 31 08:29:11 2022 +0000
+
+    students controller and routes done &&  folder utils and file.js create
+
+[33mcommit 3215cd7713faba18d2d9f642d4dbf8cd3e20d495[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Sat Jul 30 22:48:02 2022 +0000
+
+    import student modified
+
+[33mcommit e71a98f98ba2d842f95ae47a5b85610ae29d7a41[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Thu Jul 28 13:41:08 2022 +0000
+
+    training with routes on index.js before structuring the project
+
+[33mcommit 14e4125f00fc97a3302022a12f25819d36f0e55f[m
+Author: Takkino31 <takkinoyaya@gmail.com>
+Date:   Thu Jul 28 12:10:25 2022 +0000
+
+    test done
